@@ -76,12 +76,12 @@ public class Sql2oStudentDaoTest {
     }
 
     @Test
-    public void noFoodtypesReturnsEmptyList() throws Exception {
+    public void noStudentsReturnsEmptyList() throws Exception {
         assertEquals(0, studentDao.getAll().size());
     }
 
     @Test
-    public void deleteByIdDeletesCorrectFoodtype() throws Exception {
+    public void deleteByIdDeletesCorrectStudent() throws Exception {
         Student student = setupNewStudent();
         studentDao.add(student);
         studentDao.deleteById(student.getId());
@@ -111,7 +111,7 @@ public class Sql2oStudentDaoTest {
     }
 
     @Test
-    public void deletingFoodtypeAlsoUpdatesJoinTable() throws Exception {
+    public void deletingStudentAlsoUpdatesJoinTable() throws Exception {
         Epicodus testEpicodus = setupNewEpicodus();
         epicodusDao.add(testEpicodus);
 

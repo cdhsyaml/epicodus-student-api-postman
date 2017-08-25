@@ -11,23 +11,23 @@ public interface EpicodusDao {
     //create
     void add (Epicodus epicodus);
 
-//    void addEpicodusToStudent(Epicodus epicodus, Student student);
+    void addEpicodusToStudent(Epicodus epicodus, Student student);
+
+     //read
+    List<Epicodus> getAll();
+
+   List<Student> getAllStudentsForAEpicodus(int epicodusId);
 //
-//    //read
-//    List<Epicodus> getAll();
+    Epicodus findById(int id);
 //
-//    List<Student> getAllStudentsForAEpicodus(int epicodusId);
+    //update epicodus info
+    void update(int id, String name, String address, String zipcode, String phone, String email);
 //
-//    Epicodus findById(int id);
+   //delete individual epicodus
+    void deleteById(int id);
 //
-//    //update epicodus info
-//    void update(int id, String name, String address, String zipcode, String phone, String email);
-//
-//    //delete individual epicodus
-//    void deleteById(int id);
-//
-//    //delete all epicodus
-//    void clearAllEpicodus();
+    //delete all epicodus
+    void clearAllEpicodus();
 
 
 }
