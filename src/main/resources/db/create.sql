@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS epicodus (
     email VARCHAR,
     );
 
-CREATE TABLE IF NOT EXISTS student (
+CREATE TABLE IF NOT EXISTS students (
     id int PRIMARY KEY auto_increment,
     name VARCHAR
     );
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS tracks (
     content VARCHAR
     );
 
-CREATE TABLE IF NOT EXISTS epicodus_student (
+CREATE TABLE IF NOT EXISTS epicodus_students (
  id int PRIMARY KEY auto_increment,
  epicodusId INTEGER,
  studentId INTEGER
