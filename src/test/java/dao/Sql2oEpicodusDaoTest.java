@@ -67,20 +67,20 @@ public class Sql2oEpicodusDaoTest {
         epicodusDao.add(epicodus);
 
         epicodusDao.update(epicodus.getId(),"Panda Express", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com");
-        Epicodus updatedRestaurant = epicodusDao.findById(epicodus.getId());
-        assertNotEquals(initialName, updatedRestaurant.getName());
+        Epicodus updatedEpicodus = epicodusDao.findById(epicodus.getId());
+        assertNotEquals(initialName, updatedEpicodus.getName());
     }
 
     @Test
     public void deleteByIdDeletesCorrectEpicodus() throws Exception {
-        Epicodus restaurant = setupNewEpicodus();
-        epicodusDao.add(restaurant);
-        epicodusDao.deleteById(restaurant.getId());
+        Epicodus epicodus = setupNewEpicodus();
+        epicodusDao.add(epicodus);
+        epicodusDao.deleteById(epicodus.getId());
         assertEquals(0, epicodusDao.getAll().size());
     }
 
     @Test
-    public void clearAllRestaurants(){
+    public void clearAllEpicodus(){
         Epicodus epicodus = setupNewEpicodus();
         Epicodus epicodus2 = setupNewEpicodusTwo();
         epicodusDao.add(epicodus);
@@ -110,7 +110,7 @@ public class Sql2oEpicodusDaoTest {
     }
 
     @Test
-    public void deleteingRestaurantAlsoUpdatesJoinTable() throws Exception {
+    public void deleteingEpicodusAlsoUpdatesJoinTable() throws Exception {
         Student student  = new Student("Shyamal");
         studentDao.add(student);
 

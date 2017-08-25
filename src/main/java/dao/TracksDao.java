@@ -5,7 +5,7 @@ import models.Tracks;
 import javax.sound.midi.Track;
 import java.util.List;
 
-public interface TrackDao {
+public interface TracksDao {
 
     //create
     void add(Tracks tracks);
