@@ -22,11 +22,11 @@ public class Sql2oStudentDaoTest {
     public Student setupNewStudent2() { return new Student("American");}
 
     public Epicodus setupNewEpicodus(){
-        return new Epicodus("PhoVan", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com" );
+        return new Epicodus("PhoVan", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com", "Intel", 23 );
     }
 
     public Epicodus setupNewEpicodusTwo(){
-        return new Epicodus("Van", "1432 SE Morrison Street", "97106", "303-200-0099", "gym@gmail.com" );
+        return new Epicodus("Van", "1432 SE Morrison Street", "97106", "303-200-0099", "gym@gmail.com", "Syntel", 34 );
     }
 
     @Before

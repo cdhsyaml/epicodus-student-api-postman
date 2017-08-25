@@ -6,18 +6,18 @@ public class Epicodus {
     private String zipcode;
     private String phone;
     private String email;
-    private String lastJob;
+    private String lastjob;
     private int age;
     private int id;
 
 
-    public Epicodus(String name, String address, String zipcode, String phone, String email, String lastJob, int age) {
+    public Epicodus(String name, String address, String zipcode, String phone, String email, String lastjob, int age) {
         this.name = name;
         this.address = address;
         this.zipcode = zipcode;
         this.phone = phone;
         this.email = email;
-        this.lastJob = lastJob;
+        this.lastjob = lastjob;
         this.age = age;
     }
 
@@ -71,11 +71,11 @@ public class Epicodus {
 
 
     public String getLastJob() {
-        return lastJob;
+        return lastjob;
     }
 
     public void setLastJob(String lastJob) {
-        this.lastJob = lastJob;
+        this.lastjob = lastJob;
     }
 
     public int getAge() {
@@ -100,7 +100,7 @@ public class Epicodus {
         if (zipcode != null ? !zipcode.equals(epicodus.zipcode) : epicodus.zipcode != null) return false;
         if (phone != null ? !phone.equals(epicodus.phone) : epicodus.phone != null) return false;
         if (email != null ? !email.equals(epicodus.email) : epicodus.email != null) return false;
-        return lastJob != null ? lastJob.equals(epicodus.lastJob) : epicodus.lastJob == null;
+        return lastjob != null ? lastjob.equals(epicodus.lastjob) : epicodus.lastjob == null;
 
     }
 
@@ -111,7 +111,7 @@ public class Epicodus {
         result = 31 * result + (zipcode != null ? zipcode.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (lastJob != null ? lastJob.hashCode() : 0);
+        result = 31 * result + (lastjob != null ? lastjob.hashCode() : 0);
         result = 31 * result + age;
         result = 31 * result + id;
         return result;

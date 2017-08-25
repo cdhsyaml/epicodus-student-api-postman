@@ -59,7 +59,7 @@ public class App {
         post("/epicodus/:id/update", "application/json", (req, res) -> {
             int epicodusId = Integer.parseInt(req.params("id"));
             Epicodus epicodus = gson.fromJson(req.body(), Epicodus.class);
-            epicodusDao.update(epicodusId, epicodus.getName(), epicodus.getAddress(), epicodus.getZipcode(), epicodus.getPhone(), epicodus.getEmail());
+            epicodusDao.update(epicodusId, epicodus.getName(), epicodus.getAddress(), epicodus.getZipcode(), epicodus.getPhone(), epicodus.getEmail(), epicodus.getLastJob(), epicodus.getAge());
             res.status(201);
             return gson.toJson(epicodus);
         });

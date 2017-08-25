@@ -7,6 +7,8 @@ CREATE TABLE IF NOT EXISTS epicodus (
     zipcode VARCHAR,
     phone VARCHAR,
     email VARCHAR,
+    lastjob VARCHAR,
+    age INTEGER
     );
 
 CREATE TABLE IF NOT EXISTS students (

@@ -19,7 +19,7 @@ public class Sql2oEpicodusDao implements EpicodusDao {
 
     @Override
     public void add(Epicodus epicodus) {
-        String sql = "INSERT INTO epicodus (name, address, zipcode, phone, email) VALUES (:name, :address, :zipcode, :phone, :email)";
+        String sql = "INSERT INTO epicodus (name, address, zipcode, phone, email, lastjob, age) VALUES (:name, :address, :zipcode, :phone, :email, :lastjob, :age)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql)
                     .addParameter("name", epicodus.getName())
@@ -27,11 +27,13 @@ public class Sql2oEpicodusDao implements EpicodusDao {
                     .addParameter("zipcode", epicodus.getZipcode())
                     .addParameter("phone", epicodus.getPhone())
                     .addParameter("email", epicodus.getEmail())
+                    .addParameter("lastjob", epicodus.getLastJob())
+                    .addParameter("age", epicodus.getAge())
                     .addColumnMapping("NAME", "name")
                     .addColumnMapping("ADDRESS", "address")
                     .addColumnMapping("ZIPCODE", "zipcode")
-                    .addColumnMapping("PHONE", "phone")
-                    .addColumnMapping("EMAIL", "email")
+                    .addColumnMapping("LASTJOB", "lastjob")
+                    .addColumnMapping("AGE", "age")
                     .executeUpdate()
                     .getKey();
             epicodus.setId(id);
@@ -58,8 +60,8 @@ public class Sql2oEpicodusDao implements EpicodusDao {
     }
 
     @Override
-    public void update(int id, String newName, String newAddress, String newZip, String newPhone, String newEmail) {
-        String sql = "UPDATE epicodus SET (name, address, zipcode, phone, email) = (:name, :address, :zipcode, :phone, :email) WHERE id = :id";
+    public void update(int id, String newName, String newAddress, String newZip, String newPhone, String newEmail, String newLastjob, int newAge) {
+        String sql = "UPDATE epicodus SET (name, address, zipcode, phone, email, lastjob, age) = (:name, :address, :zipcode, :phone, :email, :lastjob, :age) WHERE id = :id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("id", id)
@@ -68,6 +70,8 @@ public class Sql2oEpicodusDao implements EpicodusDao {
                     .addParameter("zipcode", newZip)
                     .addParameter("phone", newPhone)
                     .addParameter("email", newEmail)
+                    .addParameter("lastjob", newLastjob )
+                    .addParameter("age", newAge)
                     .executeUpdate();
         } catch (Sql2oException ex) {
             System.out.println(ex);

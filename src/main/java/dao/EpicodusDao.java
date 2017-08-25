@@ -21,7 +21,7 @@ public interface EpicodusDao {
     Epicodus findById(int id);
 //
     //update epicodus info
-    void update(int id, String name, String address, String zipcode, String phone, String email);
+    void update(int id, String name, String address, String zipcode, String phone, String email, String lastjob, int age);
 //
    //delete individual epicodus
     void deleteById(int id);

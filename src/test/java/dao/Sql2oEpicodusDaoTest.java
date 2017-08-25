@@ -66,7 +66,7 @@ public class Sql2oEpicodusDaoTest {
         Epicodus epicodus = setupNewEpicodus();
         epicodusDao.add(epicodus);
 
-        epicodusDao.update(epicodus.getId(),"Panda Express", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com");
+        epicodusDao.update(epicodus.getId(),"Panda Express", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com", "Intel", 25);
         Epicodus updatedEpicodus = epicodusDao.findById(epicodus.getId());
         assertNotEquals(initialName, updatedEpicodus.getName());
     }
@@ -128,11 +128,11 @@ public class Sql2oEpicodusDaoTest {
     }
 
     public Epicodus setupNewEpicodus(){
-        return new Epicodus("PhoVan", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com" );
+        return new Epicodus("PhoVan", "1234 SE Division Street", "97206", "503-260-9999", "pho@gmail.com", "Intel", 23 );
     }
 
     public Epicodus setupNewEpicodusTwo(){
-        return new Epicodus("Van", "1432 SE Morrison Street", "97106", "303-200-0099", "gym@gmail.com" );
+        return new Epicodus("Van", "1432 SE Morrison Street", "97106", "303-200-0099", "gym@gmail.com", "Syntel", 34 );
     }
 
 }
