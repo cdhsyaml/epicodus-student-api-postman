@@ -27,15 +27,13 @@ public class App {
     String connectionString = "jdbc:h2:~/jadle.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
     Sql2o sql2o = new Sql2o(connectionString, "", "");
     epicodusDao=new Sql2oEpicodusDao(sql2o);
-
     studentDao=new Sql2oStudentDao(sql2o);
-
     tracksDao=new Sql2oTracksDao(sql2o);
 
     conn=sql2o.open();
 
     //CREATE
-        post("/epicodus/new", "application/json", (req, res) -> {
+        post("epicodus/new", "application/json", (req, res) -> {
             Epicodus epicodus = gson.fromJson(req.body(), Epicodus.class);
             epicodusDao.add(epicodus);
             res.status(201);;
@@ -129,7 +127,7 @@ public class App {
         post("/epicodus/:epicodusId/tracks/new", "application/json", (req, res) -> {
             int epicodusId = Integer.parseInt(req.params("epicodusId"));
             Tracks tracks = gson.fromJson(req.body(), Tracks.class);
-            tracks.setEpicodusId(epicodusId); //why do I need to set separately?
+            tracks.setEpicodusId(epicodusId);
             tracksDao.add(tracks);
             res.status(201);
             return gson.toJson(tracks);
@@ -158,9 +156,9 @@ public class App {
             Map<String, Object> jsonMap = new HashMap<>();
             jsonMap.put("status", err.getStatusCode());
             jsonMap.put("errorMessage", err.getMessage());
-            res.type("application/json"); //after does not run in case of an exception.
-            res.status(err.getStatusCode()); //set the status
-            res.body(gson.toJson(jsonMap));  //set the output.
+            res.type("application/json");
+            res.status(err.getStatusCode());
+            res.body(gson.toJson(jsonMap));
         });
 
 
