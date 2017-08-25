@@ -6,15 +6,19 @@ public class Epicodus {
     private String zipcode;
     private String phone;
     private String email;
+    private String lastJob;
+    private int age;
     private int id;
 
 
-    public Epicodus(String name, String address, String zipcode, String phone, String email) {
+    public Epicodus(String name, String address, String zipcode, String phone, String email, String lastJob, int age) {
         this.name = name;
         this.address = address;
         this.zipcode = zipcode;
         this.phone = phone;
         this.email = email;
+        this.lastJob = lastJob;
+        this.age = age;
     }
 
     public String getName() {
@@ -65,6 +69,23 @@ public class Epicodus {
         this.id = id;
     }
 
+
+    public String getLastJob() {
+        return lastJob;
+    }
+
+    public void setLastJob(String lastJob) {
+        this.lastJob = lastJob;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,12 +93,14 @@ public class Epicodus {
 
         Epicodus epicodus = (Epicodus) o;
 
+        if (age != epicodus.age) return false;
         if (id != epicodus.id) return false;
         if (!name.equals(epicodus.name)) return false;
         if (address != null ? !address.equals(epicodus.address) : epicodus.address != null) return false;
         if (zipcode != null ? !zipcode.equals(epicodus.zipcode) : epicodus.zipcode != null) return false;
         if (phone != null ? !phone.equals(epicodus.phone) : epicodus.phone != null) return false;
-        return email != null ? email.equals(epicodus.email) : epicodus.email == null;
+        if (email != null ? !email.equals(epicodus.email) : epicodus.email != null) return false;
+        return lastJob != null ? lastJob.equals(epicodus.lastJob) : epicodus.lastJob == null;
 
     }
 
@@ -88,6 +111,8 @@ public class Epicodus {
         result = 31 * result + (zipcode != null ? zipcode.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (lastJob != null ? lastJob.hashCode() : 0);
+        result = 31 * result + age;
         result = 31 * result + id;
         return result;
     }
