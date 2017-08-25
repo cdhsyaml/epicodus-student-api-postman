@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS student (
 
 CREATE TABLE IF NOT EXISTS tracks (
     id int PRIMARY KEY auto_increment,
-    writtenBy VARCHAR,
+    ratedBy VARCHAR,
     rating int,
     epicodusId INTEGER,
     content VARCHAR
