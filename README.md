@@ -15,16 +15,29 @@ Management software with dashboard for a hypothetical epicodus to allow to do th
 
 ## Specifications
 
-* It allows the user to add new student's details to epicodus.
-  <!-- *  ![picture](/public/img/POST-request-epicodus.png?raw=true) -->
+* It allows the user to add new epicodus's details.
+  * Input: POST request -> localhost:4567/epicodus/new [Postman]
+  * Outout: https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/POST-request-epicodus.png
+
+* It allows the user to see new epicodus's details.
+  * Input:GET request -> localhost:4567/epicodus
   * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus.png
 
-  <!-- *  ![picture](/public/img/GET-request-epicodus.png?raw=true) -->
+* It allows the user to add new students to an existing epicodus.
+  * Input: POST request ->localhost:4567/students/new
+  * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/POST-request-student.png
 
-<!-- * It allows the user to add new students to an existing epicodus. -->
-  <!-- *  ![picture](/public/img/POST-request-student.png?raw=true) -->
-  <!-- *  ![picture](/public/img/GET-request-student.png?raw=true) -->
+* It allows the user to see new students to an existing epicodus.
+  * Input: GET request -> localhost:4567/students
+  * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus.png
 
+* It allows us to add new tracks with an epicodus id.
+  * Input: POST request -> localhost:4567/epicodus/1/tracks/new
+  *  https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/POST-request-epicodus-id-tracks.png
+
+* It allows us to see tracks with epicodus id.
+  * Input: GET request -> localhost:4567/epicodus/1/tracks
+  * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus-id-tracks.png
 
 
   ## What's Included
