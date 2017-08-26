@@ -41,7 +41,12 @@ public class Sql2oTracksDaoTest {
         Tracks tracks = setupNewTrack();
         tracksDao.add(tracks);
         Tracks foundTrack = tracksDao.findById(tracks.getId());
-        assertNotEquals(tracks, foundTrack);
+        assertEquals(tracks.getId(), foundTrack.getId());
+        assertEquals(tracks.getCreatedAt(), foundTrack.getCreatedAt());
+        assertEquals(tracks.getContent(), foundTrack.getContent());
+        assertEquals(tracks.getEpicodusId(), foundTrack.getEpicodusId());
+        assertEquals(tracks.getRatedBy(), foundTrack.getRatedBy());
+        assertEquals(tracks.getRating(), foundTrack.getRating());
     }
 
     @Test

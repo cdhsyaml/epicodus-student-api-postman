@@ -17,9 +17,36 @@ public class Sql2oEpicodusDao implements EpicodusDao {
         this.sql2o = sql2o;
     }
 
+//    @Override
+//    public void add(Epicodus epicodus) {
+//        String sql = "INSERT INTO epicodus (name, address, zipcode, phone, email, lastjob, age) VALUES (:name, :address, :zipcode, :phone, :email, :lastjob, :age)";
+//        try (Connection con = sql2o.open()) {
+//            int id = (int) con.createQuery(sql)
+//                    .addParameter("name", epicodus.getName())
+//                    .addParameter("address", epicodus.getAddress())
+//                    .addParameter("zipcode", epicodus.getZipcode())
+//                    .addParameter("phone", epicodus.getPhone())
+//                    .addParameter("email", epicodus.getEmail())
+//                    .addParameter("lastjob", epicodus.getLastJob())
+//                    .addParameter("age", epicodus.getAge())
+//                    .addColumnMapping("NAME", "name")
+//                    .addColumnMapping("ADDRESS", "address")
+//                    .addColumnMapping("ZIPCODE", "zipcode")
+//                    .addColumnMapping("PHONE", "phone")
+//                    .addColumnMapping("EMAIL", "email")
+//                    .addColumnMapping("LASTJOB", "lastjob")
+//                    .addColumnMapping("AGE", "age")
+//                    .executeUpdate()
+//                    .getKey();
+//            epicodus.setId(id);
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+//    }
+
     @Override
     public void add(Epicodus epicodus) {
-        String sql = "INSERT INTO epicodus (name, address, zipcode, phone, email, lastjob, age) VALUES (:name, :address, :zipcode, :phone, :email, :lastjob, :age)";
+        String sql = "INSERT INTO epicodus (name, address, zipcode, phone, email, lastjob, age) VALUES (:name, :address, :zipcode, :phone, :email,:lastjob, :age)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql)
                     .addParameter("name", epicodus.getName())
@@ -32,6 +59,8 @@ public class Sql2oEpicodusDao implements EpicodusDao {
                     .addColumnMapping("NAME", "name")
                     .addColumnMapping("ADDRESS", "address")
                     .addColumnMapping("ZIPCODE", "zipcode")
+                    .addColumnMapping("PHONE", "phone")
+                    .addColumnMapping("EMAIL", "email")
                     .addColumnMapping("LASTJOB", "lastjob")
                     .addColumnMapping("AGE", "age")
                     .executeUpdate()
@@ -40,7 +69,7 @@ public class Sql2oEpicodusDao implements EpicodusDao {
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
-    }
+ }
 
     @Override
     public Epicodus findById(int id) {

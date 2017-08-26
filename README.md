@@ -16,12 +16,14 @@ Management software with dashboard for a hypothetical epicodus to allow to do th
 ## Specifications
 
 * It allows the user to add new student's details to epicodus.
-  *  ![picture](/public/img/POST-request-epicodus.png)
-  *  ![picture](/public/img/GET-request-epicodus.png)
+  *  ![picture](/public/img/POST-request-epicodus.png?raw=true)
+  *  ![picture](/public/img/GET-request-epicodus.png?raw=true)
 
 * It allows the user to add new students to an existing epicodus.
-  *  ![picture](/public/img/POST-request-student.png)
-  *  ![picture](/public/img/GET-request-student.png)
+  *  ![picture](/public/img/POST-request-student.png?raw=true)
+  *  ![picture](/public/img/GET-request-student.png?raw=true)
+
+
 
   ## What's Included
 
@@ -59,7 +61,6 @@ You will need [gradle](https://gradle.org/gradle-download/) installed on your de
   * CREATE TABLE epicodus (id serial PRIMARY KEY, name varchar, address varchar, zipcode varchar, phone varchar, email varchar);
   * CREATE TABLE students (id serial PRIMARY KEY, name varchar);
 * _In the cloned repository root directory, run the command 'gradle run'
-* Navigate to `localhost:4567` in a web browser of your choice.
 
 Using Postman:
 * Fire up Postman, and set the HTTP request type to POST, create a record before we can read it.
