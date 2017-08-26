@@ -16,12 +16,14 @@ Management software with dashboard for a hypothetical epicodus to allow to do th
 ## Specifications
 
 * It allows the user to add new student's details to epicodus.
-  *  ![picture](/public/img/POST-request-epicodus.png?raw=true)
-  *  ![picture](/public/img/GET-request-epicodus.png?raw=true)
+  <!-- *  ![picture](/public/img/POST-request-epicodus.png?raw=true) -->
+  * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus.png
 
-* It allows the user to add new students to an existing epicodus.
-  *  ![picture](/public/img/POST-request-student.png?raw=true)
-  *  ![picture](/public/img/GET-request-student.png?raw=true)
+  <!-- *  ![picture](/public/img/GET-request-epicodus.png?raw=true) -->
+
+<!-- * It allows the user to add new students to an existing epicodus. -->
+  <!-- *  ![picture](/public/img/POST-request-student.png?raw=true) -->
+  <!-- *  ![picture](/public/img/GET-request-student.png?raw=true) -->
 
 
 
