@@ -16,6 +16,13 @@ CREATE TABLE IF NOT EXISTS students (
     name VARCHAR
     );
 
+
+CREATE TABLE IF NOT EXISTS foreignstudents (
+    id int PRIMARY KEY auto_increment,
+    name VARCHAR,
+    country VARCHAR
+    );
+
 CREATE TABLE IF NOT EXISTS tracks (
     id int PRIMARY KEY auto_increment,
     ratedBy VARCHAR,

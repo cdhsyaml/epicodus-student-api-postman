@@ -76,12 +76,6 @@ epicodus-api
 You will need [gradle](https://gradle.org/gradle-download/) installed on your device.
 
 * `$ https://github.com/shyamalpunekar/epicodus-student-api-postman`
-* In PSQL:
-  * CREATE DATABASE epicodus;
-  * \c epicodus-student;
-  * CREATE TABLE epicodus (id serial PRIMARY KEY, name varchar, address varchar, zipcode varchar, phone varchar, email varchar);
-  * CREATE TABLE students (id serial PRIMARY KEY, name varchar);
-* _In the cloned repository root directory, run the command 'gradle run'
 
 Using Postman:
 * Fire up Postman, and set the HTTP request type to POST, create a record before we can read it.

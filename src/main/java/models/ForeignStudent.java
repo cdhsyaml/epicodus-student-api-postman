@@ -37,8 +37,9 @@ public class ForeignStudent extends Student {
         ForeignStudent that = (ForeignStudent) o;
 
         if (id != that.id) return false;
-        return country.equals(that.country);
+        if (!country.equals(that.country)) return false;
 
+        return true;
     }
 
     @Override

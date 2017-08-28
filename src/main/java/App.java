@@ -1,8 +1,10 @@
 import com.google.gson.Gson;
+import dao.Sql2oForeignStudentDao;
 import dao.Sql2oStudentDao;
 import dao.Sql2oEpicodusDao;
 import dao.Sql2oTracksDao;
 import exceptions.ApiException;
+import models.ForeignStudent;
 import models.Student;
 import models.Epicodus;
 import models.Tracks;
@@ -20,6 +22,7 @@ public class App {
     public static void main(String[] args) {
 
     Sql2oStudentDao studentDao;
+    Sql2oForeignStudentDao foreignStudentDao;
     Sql2oEpicodusDao epicodusDao;
     Sql2oTracksDao tracksDao;
     Connection conn;
@@ -30,6 +33,7 @@ public class App {
     epicodusDao=new Sql2oEpicodusDao(sql2o);
     studentDao=new Sql2oStudentDao(sql2o);
     tracksDao=new Sql2oTracksDao(sql2o);
+    foreignStudentDao = new Sql2oForeignStudentDao(sql2o);
 
     conn=sql2o.open();
 
@@ -162,7 +166,44 @@ public class App {
             res.body(gson.toJson(jsonMap));
         });
 
+        //foreignstudents
+        //CREATE
+        post("foreignstudents/new", "application/json", (req, res) -> {
+            ForeignStudent foreignStudent = gson.fromJson(req.body(), ForeignStudent.class);
+            foreignStudentDao.add(foreignStudent);
+            res.status(201);;
+            return gson.toJson(foreignStudent);
+        });
 
+        //READ
+        get("/foreignstudents", "application/json", (req, res) -> {
+            return gson.toJson(foreignStudentDao.getAll());
+        });
 
+        get("/foreignstudents/:id", "application/json", (req, res) -> {
+            int foreignstudentsId = Integer.parseInt(req.params("id"));
+            ForeignStudent foreignStudent = foreignStudentDao.findById(foreignstudentsId);
+
+            if (foreignStudent == null) {
+                throw new ApiException(String.format("No epicodus student with the id %d found", foreignstudentsId), 404);
+            }
+            return gson.toJson(foreignStudent);
+        });
+
+        //UPDATE
+        post("/foreignstudents/:id/update", "application/json", (req, res) -> {
+            int foreignstudentsId = Integer.parseInt(req.params("id"));
+            ForeignStudent foreignStudent = gson.fromJson(req.body(), ForeignStudent.class);
+            foreignStudentDao.update(foreignstudentsId, foreignStudent.getName(), foreignStudent.getCountry());
+            res.status(201);
+            return gson.toJson(foreignStudent);
+        });
+
+        //DELETE
+        get("/foreignstudents/:id/delete", "application/json", (req, res) -> {
+            int foreignstudentsId = Integer.parseInt(req.params("id"));
+            epicodusDao.deleteById(foreignstudentsId);
+            return foreignstudentsId;
+        });
     }
 }
