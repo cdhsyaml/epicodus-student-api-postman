@@ -1,4 +1,6 @@
 
+POST request:
+
 localhost:4567/epicodus/new
 
 {
@@ -11,6 +13,32 @@ localhost:4567/epicodus/new
     "age": 24,
     "id": 2
 }
+
+GET request: localhost:4567/epicodus
+
+POST request:
+localhost:4567/epicodus/1/tracks/new
+
+{
+	"ratedBy": "Anna",
+	"rating":"3",
+	"content":"good"
+
+}
+
+GET request:
+localhost:4567/epicodus/1/tracks
+
+POST request:
+localhost:4567/students/new
+{
+        "name": "Shyamal",
+        "id": 1
+}
+
+GET request:
+
+localhost:4567/students
 
 
 

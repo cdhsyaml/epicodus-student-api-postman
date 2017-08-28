@@ -85,7 +85,7 @@ You will need [gradle](https://gradle.org/gradle-download/) installed on your de
 
 Using Postman:
 * Fire up Postman, and set the HTTP request type to POST, create a record before we can read it.
-* Point the URL to localhost:4567/restaurants/new
+* Point the URL to localhost:4567/epicodus/new
 * Select the radio button marked "raw", and the type to " JSON application/json" in the dropdown menu.
 * Select the Body radio button, and copy in JSON below.
 * Hit Send!
