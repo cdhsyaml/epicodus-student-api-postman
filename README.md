@@ -22,23 +22,28 @@ Management software with dashboard for a hypothetical epicodus to allow to do th
 
 * It allows the user to see new epicodus's details.
   * Input:GET request -> localhost:4567/epicodus
-  * Output: https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus.png
+  * Output:
+  ![GET request epicodus details](https://github.com/shyamalpunekar/epicodus-student-api-postman/blob/master/src/main/resources/public/img/GET-request-epicodus.png)
 
 * It allows the user to add new students to an existing epicodus.
   * Input: POST request ->localhost:4567/students/new
-  * Output: https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/POST-request-student.png
+  * Output:
+  ![POST request student](https://github.com/shyamalpunekar/epicodus-student-api-postman/blob/master/src/main/resources/public/img/POST-request-student.png)
 
 * It allows the user to see new students to an existing epicodus.
   * Input: GET request -> localhost:4567/students
-  * Output: https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus.png
+  * Output:
+  ![GET request student](https://github.com/shyamalpunekar/epicodus-student-api-postman/blob/master/src/main/resources/public/img/GET-request-student.png)
 
 * It allows us to add new tracks with an epicodus id.
   * Input: POST request -> localhost:4567/epicodus/1/tracks/new
-  *  https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/POST-request-epicodus-id-tracks.png
+  * Output:
+   ![POST request epicodus id tracks](https://github.com/shyamalpunekar/epicodus-student-api-postman/blob/master/src/main/resources/public/img/POST-request-epicodus-id-tracks.png)
 
 * It allows us to see tracks with epicodus id.
   * Input: GET request -> localhost:4567/epicodus/1/tracks
-  * https://raw.githubusercontent.com/shyamalpunekar/epicodus-student-api-postman/master/src/main/resources/public/img/GET-request-epicodus-id-tracks.png
+  * Output:
+  ![GET request epicodus id tracks](https://github.com/shyamalpunekar/epicodus-student-api-postman/blob/master/src/main/resources/public/img/GET-request-epicodus-id-tracks.png)
 
 
   ## What's Included
