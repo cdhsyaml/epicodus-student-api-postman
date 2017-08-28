@@ -1,0 +1,16 @@
+
+localhost:4567/epicodus/new
+
+{
+    "name": "Shyamal",
+    "address": "Beaverton",
+    "zipcode": "97006",
+    "phone": "971-300-5636",
+    "email": "sh@gmail.com",
+    "lastjob": "intel",
+    "age": 24,
+    "id": 2
+}
+
+
+
