@@ -185,7 +185,7 @@ public class App {
             ForeignStudent foreignStudent = foreignStudentDao.findById(foreignstudentsId);
 
             if (foreignStudent == null) {
-                throw new ApiException(String.format("No epicodus student with the id %d found", foreignstudentsId), 404);
+                throw new ApiException(String.format("No foreign student with the id %d found", foreignstudentsId), 404);
             }
             return gson.toJson(foreignStudent);
         });
